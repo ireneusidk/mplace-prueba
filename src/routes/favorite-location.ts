@@ -2,6 +2,7 @@ import { App } from "@tinyhttp/app";
 import { prisma } from "../config/database.js";
 import { authMiddleware } from "../middleware/auth.js";
 import { AuthenticatedRequest } from "../types/index.js";
+import { MAX_FAVORITE_LOCATIONS } from "../services/user.js";
 
 export default function (app: App) {
 	app.post("/favorite-location", authMiddleware, async (req: AuthenticatedRequest, res) => {
@@ -23,7 +24,7 @@ export default function (app: App) {
 					.json({ error: "User not found", status: 404 });
 			}
 
-			if (user.favoriteLocations.length >= user.maxFavoriteLocations) {
+			if (user.favoriteLocations.length >= MAX_FAVORITE_LOCATIONS) {
 				return res.status(403)
 					.json({ error: "Maximum favorite locations reached", status: 403 });
 			}

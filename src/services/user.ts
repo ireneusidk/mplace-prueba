@@ -11,6 +11,8 @@ export const BOOSTER_COOLDOWN_MS = Number.parseInt(process.env["BOOSTER_COOLDOWN
 export const SPECIAL_COOLDOWN_MS = Number.parseInt(process.env["SPECIAL_COOLDOWN_MS"] ?? "") || 5000;
 export const COOLDOWN_OVERRIDE_FOR_SPECIAL = (process.env["COOLDOWN_OVERRIDE_FOR_SPECIAL"] ?? "false") === "true";
 
+export const MAX_FAVORITE_LOCATIONS = 50;
+
 export interface UpdateUserInput {
 	nickname?: string;
 	showLastPixel?: boolean;
@@ -18,7 +20,7 @@ export interface UpdateUserInput {
 }
 
 const config = {
-	maxFavoriteLocations: 15,
+	maxFavoriteLocations: MAX_FAVORITE_LOCATIONS,
 	experiments: {
 		"2025-09_pawtect": {
 			variant: "disabled"

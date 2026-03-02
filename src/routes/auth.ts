@@ -177,8 +177,6 @@ export default function (app: App) {
 					maxCharges: 20,
 					chargesCooldownMs: COOLDOWN_MS,
 					pixelsPainted: 0,
-					// TODO: Remove this column, not needed
-					maxFavoriteLocations: 50,
 					level: 1,
 					extraColorsBitmap: 0,
 					equippedFlag: 0,

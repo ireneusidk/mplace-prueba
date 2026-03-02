@@ -36,7 +36,6 @@ model User {
   flagsBitmap            Bytes?
   equippedFlag           Int                    @default(0)
   showLastPixel          Boolean                @default(true)
-  maxFavoriteLocations   Int                    @default(15)
   picture                String?                @db.Text
   level                  Float                  @default(1)
   allianceId             Int?
